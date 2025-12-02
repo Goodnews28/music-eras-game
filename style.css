@@ -1,11 +1,95 @@
-body {
-  margin: 0;
-  background: #f7f7f7;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 100px;
+/* Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-button {
-  padding: 12px 20px;
-  font-size: 18px;
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6e3;  /* light parchment-like for “music history” vibe */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.landing {
+    text-align: center;
+    padding: 50px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff8dc;  /* soft ivory */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.landing h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #6b4226;  /* rich brown */
+}
+
+.landing p#subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+#startButton {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6b4226;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#startButton:hover {
+    transform: scale(1.05);
+    background-color: #a0603a;
+}
+.era-page {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #fff8e1; /* slightly different from landing */
+    border: 2px solid #ccc;
+    max-width: 600px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.era-page h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #4b2e2e;
+}
+
+.era-page p#baroqueComposer {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.era-page img {
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#backToMenu {
+    font-size: 1rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4b2e2e;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#backToMenu:hover {
+    transform: scale(1.05);
+    background-color: #7b4a4a;
 }
