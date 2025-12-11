@@ -1,95 +1,91 @@
-/* Reset defaults */
-* {
+body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.screen {
+    display: none;
+    padding-top: 80px;
+}
+
+.screen.active {
+    display: block;
+}
+
+button {
+    background: #ffce6a;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ffd98a;
+}
+
+.era-screen {
+    background: linear-gradient(#1a1a1a, #000);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* Body */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fdf6e3;  /* light parchment-like for “music history” vibe */
-    color: #333;
+.era-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.character-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-.landing {
-    text-align: center;
-    padding: 50px;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    background-color: #fff8dc;  /* soft ivory */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 40px;
 }
 
-.landing h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #6b4226;  /* rich brown */
+#bachCharacter {
+    width: 260px;
+    animation: fadeIn 1s ease forwards;
 }
 
-.landing p#subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+.dialogue-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    background: rgba(30, 30, 30, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #555;
 }
 
-#startButton {
-    font-size: 1.2rem;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 10px;
-    background-color: #6b4226;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-#startButton:hover {
-    transform: scale(1.05);
-    background-color: #a0603a;
-}
-.era-page {
-    text-align: center;
-    padding: 40px;
-    border-radius: 10px;
-    background-color: #fff8e1; /* slightly different from landing */
-    border: 2px solid #ccc;
-    max-width: 600px;
-    margin: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.era-page h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    color: #4b2e2e;
-}
-
-.era-page p#baroqueComposer {
+#dialogueText {
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    min-height: 60px;
 }
 
-.era-page img {
-    max-width: 200px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-#backToMenu {
-    font-size: 1rem;
-    padding: 10px 25px;
+#nextDialogue {
+    margin-top: 10px;
+    padding: 10px 20px;
     border: none;
+    background: #6a4cff;
+    color: white;
     border-radius: 8px;
-    background-color: #4b2e2e;
-    color: #fff;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
 }
 
-#backToMenu:hover {
-    transform: scale(1.05);
-    background-color: #7b4a4a;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

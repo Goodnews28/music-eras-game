@@ -6,11 +6,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="landing">
-     <h1>Music Eras Adventure</h1>
-     <p id="subtitle">Travel through time with music.</p>
-     <button id="startButton">Start</button>
-    </div>
-  <script src="script.js"></script>
+
+    <!-- LANDING SCREEN -->
+    <section id="landing" class="screen active">
+        <h1>Music Eras Adventure</h1>
+        <p>Travel through time with music.</p>
+        <button id="startButton">Start</button>
+    </section>
+
+    <!-- ERA SELECTION SCREEN -->
+    <section id="eraSelect" class="screen">
+        <h2>Select an Era</h2>
+        <button class="eraBtn" data-era="baroque">Baroque</button>
+        <button class="eraBtn" data-era="classical">Classical</button>
+        <button class="eraBtn" data-era="romantic">Romantic</button>
+        <button class="eraBtn" data-era="modern">Modern</button>
+    </section>
+
+    <!-- ERA TEMPLATE -->
+    <section id="eraScreen" class="screen">
+        <h2 id="eraTitle">Era</h2>
+        <p id="eraDescription">Description goes here...</p>
+        <button id="backButton">Back</button>
+    </section>
+
+<script src="script.js"></script>
 </body>
 </html>
