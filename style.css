@@ -90,3 +90,51 @@ button:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.character-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+#bachCharacter {
+    width: 180px;
+    animation: idleFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes idleFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.character-wrapper {
+    position: relative;
+}
+
+.character-shadow {
+    width: 90px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(4px);
+}
+
+#bachCharacter {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#bachCharacter:hover {
+    transform: translateY(-12px) scale(1.03);
+}
+
