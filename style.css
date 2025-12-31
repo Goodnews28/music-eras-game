@@ -311,3 +311,47 @@ body {
   100% { transform: translateX(0); }
 }
 
+.character-wrapper {
+  cursor: pointer;
+}
+
+.character-wrapper::after {
+  content: "💭";
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  opacity: 0;
+  animation: pulse 2s infinite;
+}
+
+.character-wrapper.ready::after {
+  opacity: 1;
+}
+
+.thought {
+  position: absolute;
+  max-width: 220px;
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  top: -60px;
+  right: -40px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  animation: fadeUp 0.2s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.era-screen {
+  --light-level: 0.4;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,calc(1 - var(--light-level))),
+      rgba(0,0,0,0.85)
+    ),
+    url("images/backgrounds/baroque_cathedral.png");
+}
