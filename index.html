@@ -5,31 +5,24 @@
     <title>Music Eras Adventure</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="welcome-screen">
 
-    <!-- LANDING SCREEN -->
-    <section id="landing" class="screen active">
-        <h1>Music Eras Adventure</h1>
-        <p>Travel through time with music.</p>
-        <button id="startButton">Start</button>
-    </section>
+  <div class="welcome-container">
+    <h1 class="game-title">Music Eras Adventure</h1>
+    <p class="game-tagline">Travel through time with music.</p>
 
-    <!-- ERA SELECTION SCREEN -->
-    <section id="eraSelect" class="screen">
-        <h2>Select an Era</h2>
-        <button class="eraBtn" data-era="baroque">Baroque</button>
-        <button class="eraBtn" data-era="classical">Classical</button>
-        <button class="eraBtn" data-era="romantic">Romantic</button>
-        <button class="eraBtn" data-era="modern">Modern</button>
-    </section>
+    <div id="nameInputBox">
+      <p class="welcome-text">Before we begin… what should history call you?</p>
+      <input type="text" id="playerNameInput" placeholder="Enter your name" />
+      <button id="confirmName">Begin Journey</button>
+    </div>
 
-    <!-- ERA TEMPLATE -->
-    <section id="eraScreen" class="screen">
-        <h2 id="eraTitle">Era</h2>
-        <p id="eraDescription">Description goes here...</p>
-        <button id="backButton">Back</button>
-    </section>
+    <div id="startBox" class="hidden">
+      <p class="welcome-text" id="welcomeMessage"></p>
+      <button id="startButton">Enter the Timeline</button>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

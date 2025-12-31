@@ -58,20 +58,20 @@ button:hover {
     animation: fadeIn 1s ease forwards;
 }
 
-.dialogue-box {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    background: rgba(30, 30, 30, 0.85);
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px solid #555;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #dialogueText {
     font-size: 1.1rem;
+    line-height: 1.5;
     min-height: 60px;
 }
 
@@ -96,10 +96,6 @@ button:hover {
     margin-top: 60px;
 }
 
-#bachCharacter {
-    width: 180px;
-    animation: idleFloat 2.5s ease-in-out infinite;
-}
 
 @keyframes idleFloat {
     0% {
@@ -115,26 +111,203 @@ button:hover {
 
 .character-wrapper {
     position: relative;
-}
-
-.character-shadow {
-    width: 90px;
-    height: 16px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: blur(4px);
-}
-
-#bachCharacter {
-    cursor: pointer;
     transition: transform 0.2s ease;
 }
 
-#bachCharacter:hover {
-    transform: translateY(-12px) scale(1.03);
+.character-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.character-shadow {
+    width: 110px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(6px);
+}
+
+
+#bachCharacter {
+    width: 180px;
+    animation: idleFloat 2.5s ease-in-out infinite;
+}
+
+#bachCharacter {
+    filter: drop-shadow(0 0 12px rgba(255, 215, 150, 0.15));
+}
+
+#bachCharacter:active {
+    transform: scale(0.96);
+}
+
+.nameplate {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  background: #1c1c1c;
+  color: #d4af37;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.dialogue-box {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    width: 70%;
+    max-width: 800px;
+
+    background: rgba(15, 10, 5, 0.88);
+    border: 2px solid #caa45c;
+    border-radius: 12px;
+    padding: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.25s ease;
+    text-align: center;
+}
+
+
+
+.era-screen {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("images/backgrounds/baroque_cathedral.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    color: #f5f5f5;
+    font-family: "Georgia", serif;
+}
+
+.welcome-screen {
+  background: radial-gradient(circle at top, #1c1c1c, #000);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-container {
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+.game-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.game-tagline {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+input {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  width: 240px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.hidden {
+  display: none;
+}
+body {
+  background: linear-gradient(#0a0a0a, #111);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.timeline-container {
+  max-width: 600px;
+  margin: 80px auto;
+  position: relative;
+  padding-left: 60px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #caa45c;
+}
+
+.era-node {
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.era-dot {
+  position: absolute;
+  left: -38px;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  background: #caa45c;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(202,164,92,0.8);
+}
+
+.era-content {
+  background: rgba(20,20,20,0.9);
+  border: 2px solid rgba(202,164,92,0.5);
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.locked {
+  opacity: 0.4;
+}
+.hidden {
+  display: none;
+}
+
+#counterpointDemo {
+  margin-top: 30px;
+}
+
+.melody {
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  animation: floatMelody 2s ease-in-out infinite;
+}
+
+.melody.bottom {
+  animation-delay: 1s;
+}
+
+@keyframes floatMelody {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
 }
 
