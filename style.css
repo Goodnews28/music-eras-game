@@ -1,7 +1,7 @@
 body {
-    background: #111;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(#0a0a0a, #111);
+    color: white;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     text-align: center;
 }
@@ -31,11 +31,23 @@ button:hover {
     background: #ffd98a;
 }
 
+
 .era-screen {
-    background: linear-gradient(#1a1a1a, #000);
-    color: white;
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
+  --light-level: 0.4;
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,calc(1 - var(--light-level))),
+      rgba(0,0,0,0.85)
+    ),
+    url("images/backgrounds/baroque_cathedral.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    color: #f5f5f5;
+    font-family: "Georgia", serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -50,12 +62,17 @@ button:hover {
 .character-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 #bachCharacter {
-    width: 260px;
-    animation: fadeIn 1s ease forwards;
+    width: 180px;
+    animation: idleFloat 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 150, 0.15));
+}
+
+#bachCharacter:active {
+    transform: scale(0.96);
 }
 
 @keyframes fadeInUp {
@@ -90,13 +107,6 @@ button:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.character-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-}
-
-
 @keyframes idleFloat {
     0% {
         transform: translateY(0);
@@ -112,6 +122,7 @@ button:hover {
 .character-wrapper {
     position: relative;
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .character-wrapper:hover {
@@ -128,20 +139,6 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     filter: blur(6px);
-}
-
-
-#bachCharacter {
-    width: 180px;
-    animation: idleFloat 2.5s ease-in-out infinite;
-}
-
-#bachCharacter {
-    filter: drop-shadow(0 0 12px rgba(255, 215, 150, 0.15));
-}
-
-#bachCharacter:active {
-    transform: scale(0.96);
 }
 
 .nameplate {
@@ -176,24 +173,6 @@ button:hover {
     text-align: center;
 }
 
-
-
-.era-screen {
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.65),
-            rgba(0, 0, 0, 0.85)
-        ),
-        url("images/backgrounds/baroque_cathedral.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    min-height: 100vh;
-    color: #f5f5f5;
-    font-family: "Georgia", serif;
-}
 
 .welcome-screen {
   background: radial-gradient(circle at top, #1c1c1c, #000);
@@ -239,11 +218,6 @@ input {
 .hidden {
   display: none;
 }
-body {
-  background: linear-gradient(#0a0a0a, #111);
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
 
 .timeline-container {
   max-width: 600px;
@@ -287,9 +261,6 @@ body {
 .locked {
   opacity: 0.4;
 }
-.hidden {
-  display: none;
-}
 
 #counterpointDemo {
   margin-top: 30px;
@@ -309,10 +280,6 @@ body {
   0% { transform: translateX(0); }
   50% { transform: translateX(20px); }
   100% { transform: translateX(0); }
-}
-
-.character-wrapper {
-  cursor: pointer;
 }
 
 .character-wrapper::after {
@@ -340,18 +307,4 @@ body {
   right: -40px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   animation: fadeUp 0.2s ease;
-}
-
-.hidden {
-  display: none;
-}
-
-.era-screen {
-  --light-level: 0.4;
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,calc(1 - var(--light-level))),
-      rgba(0,0,0,0.85)
-    ),
-    url("images/backgrounds/baroque_cathedral.png");
 }
