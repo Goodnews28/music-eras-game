@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Music Eras Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="welcome-screen">
@@ -10,16 +13,21 @@
   <div class="welcome-container">
     <h1 class="game-title">Music Eras Adventure</h1>
     <p class="game-tagline">Travel through time with music.</p>
+    <div class="game-badges">
+      <span class="game-badge">Quest: Music Eras</span>
+      <span class="game-badge">Mode: Story</span>
+      <span class="game-badge">Level: 1</span>
+    </div>
 
     <div id="nameInputBox">
       <p class="welcome-text">Before we begin… what should history call you?</p>
       <input type="text" id="playerNameInput" placeholder="Enter your name" />
-      <button id="confirmName">Begin Journey</button>
+      <button id="confirmName" class="primary-btn">Begin Journey</button>
     </div>
 
     <div id="startBox" class="hidden">
       <p class="welcome-text" id="welcomeMessage"></p>
-      <button id="startButton">Enter the Timeline</button>
+      <button id="startButton" class="primary-btn">Enter the Timeline</button>
     </div>
   </div>
 
