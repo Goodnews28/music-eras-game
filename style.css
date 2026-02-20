@@ -65,13 +65,15 @@ button:hover {
     margin-top: 60px;
 }
 
-#bachCharacter {
+#bachCharacter,
+#classicalCharacter {
     width: 180px;
     animation: idleFloat 2.5s ease-in-out infinite;
     filter: drop-shadow(0 0 12px rgba(255, 215, 150, 0.15));
 }
 
-#bachCharacter:active {
+#bachCharacter:active,
+#classicalCharacter:active {
     transform: scale(0.96);
 }
 
@@ -393,11 +395,13 @@ input {
   z-index: 10;
 }
 
-#bachCharacter {
+#bachCharacter,
+#classicalCharacter {
   cursor: pointer;
 }
 
-#bachCharacter:hover {
+#bachCharacter:hover,
+#classicalCharacter:hover {
   transform: scale(1.03);
 }
 
@@ -411,3 +415,143 @@ input {
   padding-bottom: 220px;
 }
 
+.classical-era {
+  --light-level: 0.2;
+  background-image:
+    linear-gradient(
+      rgba(20, 12, 4, 0.3),
+      rgba(30, 18, 8, 0.65)
+    ),
+    url("images/backgrounds/classical_hall.png");
+}
+
+.classical-era .dialogue-box {
+  background: rgba(35, 22, 9, 0.9);
+  border-color: #d7b16f;
+}
+
+.classical-era .nameplate {
+  background: #2a1b0e;
+  color: #f1cd8f;
+}
+
+.classical-era #formGame button {
+  display: block;
+  width: min(680px, 90vw);
+  margin: 10px auto;
+  font-size: 1rem;
+}
+
+.classical-era .form-game {
+  margin: 24px auto 0;
+  width: min(760px, 92vw);
+  background: rgba(35, 22, 9, 0.82);
+  border: 1px solid rgba(215, 177, 111, 0.55);
+  border-radius: 14px;
+  padding: 18px 16px 14px;
+}
+
+.classical-era .form-instruction {
+  margin: 0 0 12px;
+  color: #f6e1ba;
+}
+
+.classical-era .form-options {
+  display: grid;
+  gap: 8px;
+}
+
+.timeline-page {
+  min-height: 100vh;
+  padding: 40px 24px 48px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(240, 194, 106, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(119, 168, 212, 0.18), transparent 45%),
+    linear-gradient(160deg, #090c14, #10182a 55%, #070b11);
+}
+
+.timeline-topbar {
+  width: min(1040px, 94vw);
+  margin: 0 auto 28px;
+  text-align: left;
+}
+
+.timeline-title {
+  margin: 14px 0 8px;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: 0.4px;
+}
+
+.timeline-subtitle {
+  margin: 0;
+  color: #d0d8e7;
+  opacity: 0.9;
+}
+
+.timeline-grid {
+  width: min(1040px, 94vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.era-card {
+  text-align: left;
+  border-radius: 16px;
+  padding: 20px 18px;
+  border: 1px solid rgba(235, 205, 141, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.era-card.active {
+  cursor: pointer;
+}
+
+.era-card.active:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 218, 145, 0.75);
+  background: rgba(255, 218, 145, 0.1);
+}
+
+.era-card.complete {
+  border-color: rgba(120, 214, 153, 0.65);
+  background: rgba(110, 200, 138, 0.14);
+}
+
+.era-card.locked {
+  opacity: 0.48;
+}
+
+.era-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.era-card-head h2 {
+  margin: 0;
+}
+
+.era-status {
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.era-years {
+  margin: 10px 0 10px;
+  color: #f0daab;
+}
+
+.era-summary {
+  margin: 0;
+  line-height: 1.35;
+  color: #d9dfeb;
+}

@@ -8,7 +8,7 @@ const welcomeMessage = document.getElementById("welcomeMessage");
 
 let playerName = "";
 
-confirmNameBtn.addEventListener("click", () => {
+function confirmName() {
   const enteredName = nameInput.value.trim();
 
   if (enteredName === "") {
@@ -23,6 +23,14 @@ confirmNameBtn.addEventListener("click", () => {
   startBox.classList.remove("hidden");
 
   welcomeMessage.textContent = `Welcome, ${playerName}. Your journey through music awaits.`;
+}
+
+confirmNameBtn.addEventListener("click", confirmName);
+
+nameInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    confirmName();
+  }
 });
 
 startButton.addEventListener("click", () => {
